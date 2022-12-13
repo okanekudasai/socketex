@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+ddfdf
+	<button id="btn" onclick="b();">보내보자</button>
+	<script>
+		let ws = new WebSocket("ws://localhost:9995/rreal/socket");
+		ws.onopen = () => {
+			console.log("웬지 열결된거 아닌가요?")
+		}
+		ws.onmessage = (message) => {
+			console.log("메세지")
+		}
+		ws.onclose = () => {
+			console.log("끝냄")
+		}
+		b = function() {
+			ws.send("ffff");
+		}
+	</script>
+</body>
+</html>
